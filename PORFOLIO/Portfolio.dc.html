@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#FAF6F0">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect x="440" y="200" width="320" height="320" rx="6" fill="none" stroke="#9C5A3C" stroke-width="6"/>
+    <line x1="600" y1="200" x2="600" y2="520" stroke="#9C5A3C" stroke-width="4" opacity="0.5"/>
+    <line x1="440" y1="360" x2="760" y2="360" stroke="#9C5A3C" stroke-width="4" opacity="0.5"/>
+    <circle cx="600" cy="360" r="16" fill="none" stroke="#9C5A3C" stroke-width="6"/>
+    <path d="M470 230 L470 200 L500 200" fill="none" stroke="#2B211A" stroke-width="7"/>
+    <path d="M700 200 L730 200 L730 230" fill="none" stroke="#2B211A" stroke-width="7"/>
+    <path d="M470 490 L470 520 L500 520" fill="none" stroke="#2B211A" stroke-width="7"/>
+    <path d="M700 520 L730 520 L730 490" fill="none" stroke="#2B211A" stroke-width="7"/>
+    <text x="600" y="620" font-family="Georgia,serif" font-size="52" fill="#2B211A" text-anchor="middle">Deoliana Matilde</text>
+    <text x="600" y="668" font-family="monospace" font-size="24" letter-spacing="4" fill="#9C5A3C" text-anchor="middle">MEDICAL IMAGING R&amp;D</text>
+  </svg>
+</template>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#FAF6F0;color:#2B211A;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:#E4D6C4;}
+  @keyframes recPulse{0%,100%{opacity:1;}50%{opacity:0.25;}}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100vh;background:#FAF6F0;overflow:hidden;">
+
+  <sc-if value="{{ gridBackdrop }}" hint-placeholder-val="{{ true }}">
+    <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(#2B211A 1px,transparent 1px),linear-gradient(90deg,#2B211A 1px,transparent 1px);background-size:64px 64px;opacity:0.03;"></div>
+  </sc-if>
+
+  <!-- ================= NAV ================= -->
+  <header style="position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(250,246,240,0.82);border-bottom:1px solid #DED2C2;">
+    <nav style="max-width:1320px;margin:0 auto;padding:15px clamp(20px,5vw,52px);display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <a href="#home" style="font-family:'Spectral',serif;font-size:1.18rem;font-weight:600;color:#2B211A;text-decoration:none;letter-spacing:-0.01em;">Deoliana Matilde</a>
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,30px);align-items:center;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.09em;text-transform:uppercase;">
+        <a href="#about" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">About</a>
+        <a href="#resume" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">Résumé</a>
+        <a href="#work" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">Work</a>
+        <a href="#contact" style="color:#FAF6F0;text-decoration:none;background:{{ accent }};padding:8px 15px;border-radius:2px;">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section id="home" style="position:relative;z-index:1;scroll-margin-top:88px;max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,92px) clamp(20px,5vw,52px) clamp(40px,5vw,64px);">
+    <!-- top kicker -->
+    
+
+    <!-- main row -->
+    <div style="display: flex; align-items: center; gap: 15px; font-family: 'IBM Plex Mono',monospace; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: #8A7A69; margin-bottom: clamp(32px,4vw,52px)">
+      <span style="width:34px;height:1px;background:#C9BAA7;"></span>
+      Biomedical Engineer · Korea University · 2026
+    </div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.76rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};margin-bottom:24px;">MEDICAL IMAGING R&amp;D · AI in HEALTHCARE<br></div>
+
+    <!-- stats row -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,6vw,72px);align-items:center;">
+      <div>
+        <div style="font-family:'Spectral',serif;font-style:italic;font-size:clamp(1.2rem,1.8vw,1.5rem);color:#8A7A69;margin-bottom:10px;">Hello, I'm</div>
+        <h1 style="font-family: 'Spectral',serif; font-weight: 600; font-size: clamp(2.1rem,4.4vw,3.5rem); line-height: 1.07; letter-spacing: -0.02em; margin: 0 0 18px; color: #2B211A; width: 625px; height: 104px">Deoliana Matilde Tilman Magalhaes</h1>
+        
+        
+        <p style="font-size: clamp(1.02rem,1.35vw,1.16rem); line-height: 1.7; color: #5C4E42; max-width: 46ch; margin: 0 0 34px; width: 460px; height: 222px">I research and develop medical imaging systems, from ultrasound signal processing to AI-driven image reconstruction.<br><br>A biomedical engineer focused on imaging R&amp;D — combining deep learning and transducer simulation to push the boundaries of ultrasound image reconstruction.</p><div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="#work" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;background:{{ accent }};color:#FAF6F0;text-decoration:none;padding:14px 26px;border-radius:2px;">View Projects</a>
+          <a href="uploads/cv.pdf" download="Deoliana-Magalhaes-CV.pdf" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#2B211A;text-decoration:none;padding:14px 26px;border-radius:2px;border:1px solid #C9BAA7;" style-hover="border-color:#2B211A;">Download CV ↓</a>
+        </div>
+      </div><div style="display: flex; justify-content: center; width: 442px; height: 307px">
+        <div style="position: relative; width: 307px; aspect-ratio: 1/1; height: 306px">
+          <div style="position:absolute;inset:-16px;border-radius:50%;border:1px solid {{ accent }};opacity:0.35;"></div>
+          <div style="position:absolute;inset:0;border-radius:50%;overflow:hidden;border:1px solid #DED2C2;box-shadow:0 24px 60px -30px rgba(43,33,26,0.45);">
+            <img src="uploads/hero-portrait.png" alt="Deoliana Matilde Tilman Magalhães" style="width:100%;height:100%;object-fit:cover;object-position:center 32%;display:block;">
+          </div>
+          <div style="position: absolute; top: 9%; right: 28px; width: 10px; height: 10px; border-radius: 50%; background: {{ accent }}; box-shadow: 0 0 0 4px rgba(250,246,240,0.9)"></div>
+        </div>
+      </div>
+
+      <!-- circular photo -->
+      
+    </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:#DED2C2;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;margin-top:clamp(44px,6vw,72px);">
+      <div style="background:#FAF6F0;padding:24px 20px;text-align:center;">
+        <div style="font-family:'Spectral',serif;font-size:clamp(1.7rem,2.6vw,2.3rem);color:{{ accent }};line-height:1;">’26</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:#8A7A69;margin-top:9px;">Graduate</div>
+      </div>
+      <div style="background:#FAF6F0;padding:24px 20px;text-align:center;">
+        <div style="font-family:'Spectral',serif;font-size:clamp(1.7rem,2.6vw,2.3rem);color:{{ accent }};line-height:1;">BME</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:#8A7A69;margin-top:9px;">Degree</div>
+      </div>
+      <div style="background:#FAF6F0;padding:24px 20px;text-align:center;">
+        <div style="font-family:'Spectral',serif;font-size:clamp(1.7rem,2.6vw,2.3rem);color:{{ accent }};line-height:1;">3</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:#8A7A69;margin-top:9px;">Projects</div>
+      </div>
+      <div style="background:#FAF6F0;padding:24px 20px;text-align:center;">
+        <div style="font-family:'Spectral',serif;font-size:clamp(1.7rem,2.6vw,2.3rem);color:{{ accent }};line-height:1;">4</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.64rem;letter-spacing:0.12em;text-transform:uppercase;color:#8A7A69;margin-top:9px;">Languages</div>
+      </div>
+    </div>
+
+    <!-- contact row -->
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(14px,3vw,32px);margin-top:clamp(28px,3vw,40px);font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;">
+      <a href="mailto:deolianatilman@gmail.com" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">✉ deolianatilman@gmail.com</a>
+      <a href="https://www.linkedin.com/in/deoliana-tilman-magalhaes-2b6243250" target="_blank" rel="noopener" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">↗ LinkedIn</a>
+      <a href="https://deolianatilman-rgb.github.io" target="_blank" rel="noopener" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">↗ GitHub</a>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" style="position:relative;z-index:1;scroll-margin-top:88px;border-top:1px solid #DED2C2;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(20px,5vw,52px);">
+      <!-- label row -->
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:clamp(28px,3.5vw,44px);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};">01 — About</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#948473;">Seoul, South Korea</div>
+      </div><h2 style="font-family: 'Spectral',serif; font-weight: 700; font-size: clamp(2rem,4.5vw,3rem); line-height: 1; letter-spacing: -0.03em; margin: 0 0 clamp(3px,2vw,20px); color: #2B211A">About Me</h2>
+
+      <!-- headline -->
+      
+
+      <!-- lead statement -->
+      <p style="font-family: 'Spectral',serif; font-weight: 500; font-size: clamp(1rem,3vw,2rem); line-height: 1.3; letter-spacing: -0.014em; margin: 0 0 clamp(20px,3vw,45px); max-width: 255ch; color: #5C4E42">Passionate about exploring the intersection of <span style="color:{{ accent }};">AI and medical physics</span> to advance diagnostic precision.</p>
+
+      <!-- top: image + bio -->
+      
+
+      <!-- bottom: fact cards -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(40px,5vw,68px);align-items:center;margin-bottom:clamp(44px,6vw,72px);">
+        <div style="position:relative;">
+          <div style="aspect-ratio:4/5;width:100%;border-radius:4px;overflow:hidden;border:1px solid #DED2C2;box-shadow:0 24px 60px -34px rgba(43,33,26,0.5);">
+            <img src="uploads/about-collage.jpg" alt="Deoliana in the lab — ultrasound, microscopy, and instrumentation" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div style="position:absolute;left:-1px;bottom:-14px;background:{{ accent }};color:#FAF6F0;font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;padding:9px 15px;border-radius:2px;box-shadow:0 10px 24px -14px rgba(43,33,26,0.6);">In the lab · Korea Univ</div>
+        </div>
+        <div>
+          <p style="font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.72;color:#3A2E24;margin:0 0 18px;">I'm a Global Korea Scholarship (GKS) recipient and a biomedical engineering graduate of Korea University, originally from Timor-Leste. Moving between countries and four languages, including Korean, taught me to adapt quickly and stay eager to learn.</p>
+          <p style="font-size:1.05rem;line-height:1.72;color:#5C4E42;margin:0;">My focus is medical imaging research and development. Most recently I built deep-learning models for ultrasound reconstruction and ran transducer simulations — and I'm eager to extend that work into MRI and other imaging modalities.</p>
+        </div>
+      </div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:#DED2C2;border:1px solid #DED2C2;border-radius:4px;overflow:hidden;">
+        <div style="background:#FAF6F0;padding:22px 22px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:{{ accent }};margin-bottom:13px;">Focus</div>
+          <div style="font-size:0.84rem;line-height:1.7;color:#3A2E24;">Medical Imaging<br>Medical Physics<br>AI Models<br>Imaging R&amp;D</div>
+        </div>
+        <div style="background:#FAF6F0;padding:22px 22px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:{{ accent }};margin-bottom:13px;">Tools &amp; Skills</div>
+          <div style="font-size:0.84rem;line-height:1.7;color:#3A2E24;">Python<br>MATLAB<br>Verasonics<br>Rhino · Fusion 360</div>
+        </div>
+        <div style="background:#FAF6F0;padding:22px 22px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:{{ accent }};margin-bottom:13px;">Languages</div>
+          <div style="font-size:0.84rem;line-height:1.7;color:#3A2E24;">Tetun — Native<br>English — Fluent<br>Korean — TOPIK 4<br>Indonesian — Fluent<br>Portuguese — Professional</div>
+        </div>
+        <div style="background:#FAF6F0;padding:22px 22px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:{{ accent }};margin-bottom:13px;">Education</div>
+          <div style="font-size:0.84rem;line-height:1.7;color:#3A2E24;">B.S. Biomedical<br>Engineering<br>Korea University</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RÉSUMÉ ================= -->
+  <section id="resume" style="position:relative;z-index:1;scroll-margin-top:88px;border-top:1px solid #DED2C2;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(20px,5vw,52px);">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:clamp(40px,5vw,64px);">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};margin-bottom:14px;">02 — Résumé</div>
+          <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.7rem,3vw,2.4rem);margin:0;">Experience &amp; Education</h2>
+        </div>
+        <a href="uploads/cv.pdf" download="Deoliana-Magalhaes-CV.pdf" style="font-family:'IBM Plex Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;background:{{ accent }};color:#FAF6F0;text-decoration:none;padding:13px 22px;border-radius:2px;">Download CV ↓</a>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(36px,5vw,72px);">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:22px;">Experience</div>
+          <div style="display:flex;flex-direction:column;gap:26px;">
+            <div style="border-left:2px solid #D8CCBD;padding-left:20px;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:{{ accent }};margin-bottom:6px;">JUL 2025 — MAR 2026</div>
+              <div style="font-family:'Spectral',serif;font-size:1.2rem;font-weight:500;margin-bottom:4px;">Research Intern — Medical Imaging System Lab</div>
+              <div style="font-size:0.96rem;line-height:1.6;color:#5C4E42;">Korea University, Seoul. Built AdaptiveMLP for deep-learning ultrasound reconstruction; ran 2D transducer simulations in Verasonics / MATLAB; presented findings weekly.</div>
+            </div>
+            <div style="border-left:2px solid #D8CCBD;padding-left:20px;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:{{ accent }};margin-bottom:6px;">SEP 2024 — MAR 2025</div>
+              <div style="font-family:'Spectral',serif;font-size:1.2rem;font-weight:500;margin-bottom:4px;">Research Intern — Nano Bioplasmonic Lab</div>
+              <div style="font-size:0.96rem;line-height:1.6;color:#5C4E42;">Korea University – KIST. Raman spectroscopy experiments and ML classification of spectral data; experimental setup, data collection, and documentation.</div>
+            </div>
+            <div style="border-left:2px solid #D8CCBD;padding-left:20px;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:{{ accent }};margin-bottom:6px;">AUG 2024 — MAR 2026</div>
+              <div style="font-family:'Spectral',serif;font-size:1.2rem;font-weight:500;margin-bottom:4px;">Head of Public Affairs — Student Association</div>
+              <div style="font-size:0.96rem;line-height:1.6;color:#5C4E42;">Timor-Leste Embassy Community, Seoul. Coordinated events and cultural programs connecting students with the embassy and partners.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:22px;">Education</div>
+          <div style="border-left:2px solid #D8CCBD;padding-left:20px;margin-bottom:36px;">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:{{ accent }};margin-bottom:6px;">MAR 2022 — FEB 2026</div>
+            <div style="font-family:'Spectral',serif;font-size:1.2rem;font-weight:500;margin-bottom:4px;">B.S. Biomedical Engineering</div>
+            <div style="font-size:0.96rem;line-height:1.6;color:#5C4E42;">Korea University, Seoul. Global Korea Scholarship (GKS) recipient · KU Presentation Contest Winner. Capstone: 2D transducer simulation &amp; ultrasound image reconstruction.</div>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:14px;">Languages</div>
+          <div style="font-size:0.96rem;line-height:1.8;color:#3A2E24;margin-bottom:36px;">Tetun (Native) · English (Professional)<br>Korean (TOPIK 4) · Indonesian (Fluent)</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:16px;">Skills</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">Python</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">MATLAB</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">Deep Learning</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">Ultrasound Imaging</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">Beamforming</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">Signal Processing</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">Verasonics</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">Raman Spectroscopy</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">Rhino</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#3A2E24;border:1px solid #D8CCBD;border-radius:2px;padding:6px 11px;">Fusion 360</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SELECTED WORK ================= -->
+  <section id="work" style="position:relative;z-index:1;scroll-margin-top:88px;border-top:1px solid #DED2C2;background:#F4EDE3;">
+    
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(56px,8vw,104px) clamp(20px,5vw,52px);">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:clamp(40px,5vw,64px);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};">03 — Selected Work</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;color:#948473;">03 PROJECTS</div>
+      </div>
+
+      <!-- PROJECT 01 -->
+      
+
+      <!-- PROJECT 01 — IN DEPTH -->
+      <article style="padding:clamp(32px,4vw,52px) 0 clamp(26px,3vw,38px);border-top:1px solid #DED2C2;">
+        <!-- header on top -->
+        <div style="display:flex;align-items:baseline;gap:clamp(16px,3vw,28px);margin-bottom:clamp(24px,3vw,36px);">
+          <div style="font-family:'Spectral',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:400;color:#D8CCBD;line-height:1;flex:0 0 auto;">01</div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:10px;">Big-Data Project · Deep Learning</div>
+            <h3 style="font-family: 'Spectral',serif; font-weight: 500; font-size: clamp(1.5rem,2.8vw,2.3rem); line-height: 1.14; letter-spacing: -0.01em; margin: 0; max-width: 144ch">Adaptive Beamforming with Deep Learning for Ultrasound Image Reconstruction</h3>
+          </div>
+        </div>
+        <!-- image + description below -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: clamp(24px,4vw,56px); align-items: center; width: 977px; height: 318px; position: relative">
+          <div style="position: relative; aspect-ratio: 4/3; width: 449px; border: 1px solid #D8CCBD; border-radius: 3px; overflow: hidden; background: #FAF6F0; height: 343px">
+            
+            <div style="position:absolute;top:12px;left:12px;width:18px;height:18px;border-top:1.5px solid {{ accent }};border-left:1.5px solid {{ accent }};"></div>
+            <div style="position:absolute;bottom:12px;right:12px;width:18px;height:18px;border-bottom:1.5px solid {{ accent }};border-right:1.5px solid {{ accent }};"></div>
+          </div>
+          <div>
+            <p style="font-size:1.02rem;line-height:1.65;color:#5C4E42;margin:0 0 18px;max-width:46ch;">DAS beamforming is fast but low-resolution; MVDR is sharp but too costly for real time. I built a lightweight MLP that learns a pixel-wise correction mapping DAS toward MVDR quality — using interpretable RF features. Trained on PICMUS phantom and in-vivo carotid data, it delivers near-MVDR resolution and sidelobe suppression at a fraction of the compute.</p>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.05em;color:#948473;">Python · Deep Learning · MLP · PICMUS · MVDR / DAS</div>
+          </div>
+        <img src="uploads/us-collage2.png" alt="Adaptive beamforming figures" style="position: absolute; inset: 0; width: 408px; height: 288px; object-fit: cover; display: block; left: 19px; top: 34px"></div>
+      </article>
+
+      <!-- PROJECT 02 -->
+      <div style="border-left:2px solid {{ accent }};padding:2px 0 clamp(40px,5vw,60px) clamp(20px,3vw,36px);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};margin-bottom:26px;">01 · In Depth</div>
+
+        <!-- problem / approach / data -->
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,60px);margin-bottom:clamp(36px,4vw,56px);">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">The Problem</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">MVDR delivers excellent resolution and sidelobe suppression, but per-pixel covariance estimation and matrix inversion make it impractical in real time. DAS is fast but suffers limited resolution and clutter.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">My Approach</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">Extract 5 interpretable features per pixel — log-DAS intensity, coherence factor, 5×5 local mean &amp; std, normalized depth — and train a 3-layer MLP (256 neurons, ReLU) to predict a log-domain correction toward MVDR.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">Data &amp; Training</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">PICMUS phantom + in-vivo carotid RF data, merged to ~84k training / 15k validation pixels. Adam optimizer, batch 2048, 20 epochs — with stable, closely-tracked train/val loss and no overfitting.</p>
+          </div>
+        </div>
+
+        <!-- METHOD -->
+        
+
+        
+        <div style="display:flex;align-items:center;gap:16px;margin:0 0 24px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};">Method</span>
+          <span style="flex:1;height:1px;background:#DED2C2;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(20px,3vw,32px);align-items:start;margin-bottom:clamp(28px,3vw,40px);">
+          <div>
+            <div style="background: #fff; border: 1px solid #DED2C2; border-radius: 3px; overflow: hidden; padding: 14px; width: 298px; height: 181px">
+              <img src="uploads/us2-arch.png" alt="MLP architecture: 5 input features, three 256-neuron ReLU hidden layers, single output r" style="width:100%;height:auto;display:block;">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 1 — MLP architecture · 5 features → 3×256 ReLU → r (I_DL = I_DAS · e^r)</div>
+          </div>
+          <div>
+            <div style="background: #fff; border: 1px solid #DED2C2; border-radius: 3px; overflow: hidden; padding: 14px; display: flex; justify-content: center; width: 235px; height: 184px">
+              <img src="uploads/us2-roi.png" alt="ROIs and profile line on DAS image for measuring contrast and resolution" style="max-width: 100%; height: 163px; display: block; width: 182px">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 2 — Evaluation setup · target/background ROIs and profile lines</div>
+          </div>
+          <div>
+            <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:14px;">
+              <img src="uploads/us2-curve.png" alt="Training and validation MSE loss over 20 epochs" style="width: 264px; height: 157px; display: block">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 3 — Training curve · train/val MSE track closely, no overfitting</div>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div style="display:flex;align-items:center;gap:16px;margin:clamp(40px,5vw,60px) 0 24px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};">Results</span>
+          <span style="flex:1;height:1px;background:#DED2C2;"></span>
+        </div>
+
+        <!-- metrics -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 1px; background: #DED2C2; border: 1px solid #DED2C2; border-radius: 3px; overflow: hidden; margin-bottom: clamp(30px,4vw,44px); width: 954px; height: 108px">
+          <div style="background:#FAF6F0;padding:26px 22px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">36→28</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">Carotid main lobe (px)</div>
+          </div>
+          <div style="background:#FAF6F0;padding:26px 22px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">−3.5 dB</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">Sidelobe · best of 3</div>
+          </div>
+          <div style="background:#FAF6F0;padding:26px 22px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">~84k</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">Training pixels</div>
+          </div><div style="background: #FAF6F0; padding: 26px 22px; width: 240px; height: 108px">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">2</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">PICMUS datasets</div>
+          </div>
+          <div style="background:#FAF6F0;padding:26px 22px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">~1.75</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">Phantom CNR · near MVDR</div>
+          </div>
+          <div style="background: #FAF6F0; padding: 26px 22px; width: 172px; height: 121px">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">7 px</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">Phantom resolution (FWHM)</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,32px);margin-bottom:clamp(28px,3vw,40px);align-items:start;">
+          <div>
+            <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:16px;">
+              <img src="uploads/us2-phantom.png" alt="Phantom cyst reconstruction: DAS, MVDR, DL (MLP-enhanced)" style="width:100%;height:auto;display:block;">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 4 — Phantom cyst · DAS vs. MVDR vs. DL (MLP) — sharper cysts, reduced sidelobes</div>
+          </div>
+          <div>
+            <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:16px;">
+              <img src="uploads/us2-carotid.png" alt="In-vivo carotid reconstruction: DAS, MVDR, DL (MLP predicted)" style="width:100%;height:auto;display:block;">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 5 — In-vivo carotid · DAS vs. MVDR vs. DL (MLP) — clearer vessel walls, narrower main lobe</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(24px,4vw,40px);">
+          <div>
+            <div style="background: #fff; border: 1px solid #DED2C2; border-radius: 3px; overflow: hidden; padding: 14px; width: 343px; height: 220px">
+              <img src="uploads/us2-lat-phantom.png" alt="Lateral profile at z=115, phantom: DL tracks MVDR" style="width: 320px; height: 203px; display: block">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 6 — Lateral profile · phantom (DL tracks MVDR)</div>
+          </div>
+          <div>
+            <div style="background: #fff; border: 1px solid #DED2C2; border-radius: 3px; overflow: hidden; padding: 14px; width: 312px; height: 218px">
+              <img src="uploads/us2-lat-carotid.png" alt="Lateral profile at z=115, carotid: DL tracks MVDR" style="width:100%;height:auto;display:block;">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 7 — Lateral profile · carotid (smoother, similar main-lobe width)</div>
+          </div>
+        </div>
+
+        <!-- takeaway -->
+        <p style="font-family:'Spectral',serif;font-style:italic;font-size:clamp(1.15rem,1.8vw,1.5rem);line-height:1.4;color:#2B211A;margin:clamp(36px,4vw,52px) 0 0;max-width:34ch;">Near-MVDR image quality at a fraction of the compute — a step toward real-time adaptive ultrasound.</p>
+
+        <!-- LIMITATIONS & NEXT STEPS -->
+        <div style="display:flex;align-items:center;gap:16px;margin:clamp(40px,5vw,60px) 0 24px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};">Limitations &amp; Next Steps</span>
+          <span style="flex:1;height:1px;background:#DED2C2;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,60px);">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">Limitations</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">Because the model works pixel-wise, it can't fully capture the spatial covariance MVDR relies on — so in noisy in-vivo scans, sharper resolution comes with a modest contrast trade-off (carotid CNR 0.61 vs. 0.73 for DAS). Performance is also sensitive to probe, frequency, and noise differences across datasets.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">Next Steps</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">Move from pixel-wise features to RF-domain learning — UNet or beamformer-transformer architectures and covariance-aware networks — and train across more diverse, multi-center data. Deploy on GPU or embedded hardware (TensorRT) for real-time, point-of-care adaptive beamforming.</p>
+          </div>
+        </div>
+      </div><article style="padding:clamp(32px,4vw,52px) 0;border-top:1px solid #DED2C2;">
+        <div style="display:flex;align-items:baseline;gap:clamp(16px,3vw,28px);margin-bottom:clamp(24px,3vw,36px);">
+          <div style="font-family:'Spectral',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:400;color:#D8CCBD;line-height:1;flex:0 0 auto;">02</div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:10px;">Capstone Project</div>
+            <h3 style="font-family: 'Spectral',serif; font-weight: 500; font-size: clamp(1.5rem,2.8vw,2.3rem); line-height: 1.14; letter-spacing: -0.01em; margin: 0; max-width: 24ch; width: 428px; height: 101px">Simulating a 2D (8×8) Ultrasound Transducer in Verasonics</h3>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: clamp(24px,4vw,56px); align-items: center; position: relative">
+          
+          <div style="position: relative; aspect-ratio: 4/3; width: 445px; border: 1px solid #D8CCBD; border-radius: 3px; overflow: hidden; background: #FAF6F0; height: 238px">
+            
+            <div style="position:absolute;top:12px;left:12px;width:18px;height:18px;border-top:1.5px solid {{ accent }};border-left:1.5px solid {{ accent }};"></div>
+            <div style="position:absolute;bottom:12px;right:12px;width:18px;height:18px;border-bottom:1.5px solid {{ accent }};border-right:1.5px solid {{ accent }};"></div>
+          <img src="uploads/us3-card2.png" alt="2D transducer simulation figures" style="position: absolute; inset: 0; width: 406px; height: 197px; object-fit: cover; display: block; left: 17px; top: 19px"></div><div>
+            <p style="font-size:1.02rem;line-height:1.65;color:#5C4E42;margin:0 0 18px;max-width:46ch;">A capstone building the ultrasound imaging chain from scratch in Verasonics simulation: modelling a 64-element (8×8) 2D matrix array, transmitting steered plane waves, capturing RF data, and reconstructing volumetric images — then studying how pitch, frequency, and aperture govern image quality.</p>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.05em;color:#948473;">MATLAB · Verasonics · Plane-Wave Imaging · 3D Reconstruction</div>
+          </div>
+        </div>
+      </article>
+
+      <div style="border-left:2px solid {{ accent }};padding:2px 0 clamp(40px,5vw,60px) clamp(20px,3vw,36px);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};margin-bottom:26px;">02 · In Depth</div>
+
+        <!-- problem / approach -->
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,60px);margin-bottom:clamp(36px,4vw,56px);">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">Goal</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">Build and understand a full 2D matrix-array imaging pipeline in Verasonics (simulation-only) — geometry, transmit, receive, and reconstruction — as the foundation for beamforming research.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">Setup</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">8×8 array (64 elements), 11 MHz center frequency, 300 µm pitch, cone-shaped imaging region (20° FOV) in homogeneous media with scattered point targets along depth.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">Transmit</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">Plane-wave transmits — a single unsteered flash, and coherent compounding across five steering angles (−20°, −10°, 0°, +10°, +20°) — reconstructed on the XY / XZ / YZ planes.</p>
+          </div>
+        </div>
+
+        <!-- METHOD -->
+        <div style="display:flex;align-items:center;gap:16px;margin:0 0 24px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};">Setup &amp; Geometry</span>
+          <span style="flex:1;height:1px;background:#DED2C2;"></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:clamp(28px,3.5vw,44px);margin-bottom:clamp(28px,3vw,40px);">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,3vw,32px);align-items:start;">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:12px;">A · Transducer Parameters</div>
+              <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:clamp(12px,1.5vw,16px);">
+                <img src="uploads/us3-params.png" alt="Transducer geometry and parameters: 8x8 matrix, 11 MHz, 300 µm pitch, 90 µm kerf, 210 µm element, with physical photo and element mapping" style="width:100%;height:auto;display:block;">
+              </div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 1 — 8×8 matrix · 11 MHz · 300 µm pitch · 90 µm kerf · 210 µm element · c = 1540 m/s</div>
+            </div>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:12px;">B · Media &amp; Geometry</div>
+              <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:clamp(12px,1.5vw,16px);">
+                <img src="uploads/us3-media.png" alt="Media and PData geometry: homogeneous media with scattered points, cone region FOV 20 degrees, XZ/YZ/XY slice planes, imaging depth along Z" style="width:100%;height:auto;display:block;">
+              </div>
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 2 — Homogeneous media with scattered points · cone PData (20° FOV) · XZ / YZ / XY slices</div>
+            </div>
+          </div><div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:12px;">C · Transmit Signal</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(20px,3vw,36px);align-items:center;">
+              <div style="background: #fff; border: 1px solid #DED2C2; border-radius: 3px; overflow: hidden; padding: clamp(14px,2vw,22px); width: 433px; height: 324px">
+                <img src="uploads/us3-transmit.png" alt="Transmit excitation waveform (top) and its tri-state drive pulse (bottom)" style="width: 392px; height: 281px; display: block">
+              </div>
+              <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">Each element is driven by a short tri-state pulse (bottom) producing the band-limited excitation waveform (top) — the acoustic signal transmitted into the media to form each plane-wave flash.</p>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 3 — Excitation waveform &amp; tri-state drive pulse</div>
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div style="display:flex;align-items:center;gap:16px;margin:clamp(36px,4vw,52px) 0 24px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};">Reconstruction</span>
+          <span style="flex:1;height:1px;background:#DED2C2;"></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:#DED2C2;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;margin-bottom:clamp(28px,3vw,40px);">
+          <div style="background:#FAF6F0;padding:26px 22px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">64</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">Elements · 8×8 array</div>
+          </div>
+          <div style="background:#FAF6F0;padding:26px 22px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">11 MHz</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">Center frequency</div>
+          </div>
+          <div style="background:#FAF6F0;padding:26px 22px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">5</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">Steering angles (±20°)</div>
+          </div>
+          <div style="background:#FAF6F0;padding:26px 22px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.9rem,3vw,2.6rem);color:{{ accent }};line-height:1;">3D</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:#948473;margin-top:10px;">XY · XZ · YZ planes</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,3vw,32px);align-items:start;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:12px;">A · Raw RF Data (Plane Wave)</div>
+            <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:clamp(12px,1.5vw,16px);">
+              <img src="uploads/us3-rf.png" alt="Raw RF channel data across the five plane-wave acquisitions, interpolated 4x" style="width:100%;height:auto;display:block;">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 4 — Received RF across the five plane-wave acquisitions (channels 16 &amp; 48)</div>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:12px;">B · Image Reconstruction (PWC)</div>
+            <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:clamp(12px,1.5vw,16px);">
+              <img src="uploads/us3-recon.png" alt="Plane-wave compounded reconstruction: XY, XZ and YZ plane images plus the 3D volume reconstruction of the 8x8 array" style="width:100%;height:auto;display:block;">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;margin-top:12px;">Fig. 5 — Plane-wave compounded reconstruction: XY / XZ / YZ planes &amp; the 3D volume</div>
+          </div>
+        </div>
+
+        <!-- STUDY -->
+        <div style="display:flex;align-items:center;gap:16px;margin:clamp(36px,4vw,52px) 0 24px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};">Study — Pitch, Frequency &amp; Aperture</span>
+          <span style="flex:1;height:1px;background:#DED2C2;"></span>
+        </div>
+        <p style="font-size: 1.02rem; line-height: 1.7; color: #5C4E42; margin: 0 0 clamp(28px,3vw,40px); max-width: 62ch; width: 614px; height: 80px">A follow-up study asking a deceptively simple question: if higher frequency needs a smaller pitch to satisfy spatial sampling, does shrinking the pitch actually give sharper images? The answer turned out to be counterintuitive.</p>
+
+        <!-- Background theory -->
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:16px;">Background Theory</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(18px,2.5vw,28px);margin-bottom:clamp(28px,3vw,40px);">
+          <div style="padding:2px 0;">
+            <div style="font-family:'Spectral',serif;font-size:1.15rem;font-weight:500;margin-bottom:10px;">Pitch &amp; spatial sampling</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:1.05rem;color:{{ accent }};margin-bottom:12px;">p ≤ λ / 2</div>
+            <p style="font-size:0.98rem;line-height:1.65;color:#5C4E42;margin:0;">To avoid spatial aliasing and grating lobes, element pitch must stay below half a wavelength. Higher center frequency shortens λ — and therefore demands a smaller pitch.</p>
+          </div>
+          <div style="padding:2px 0;">
+            <div style="font-family:'Spectral',serif;font-size:1.15rem;font-weight:500;margin-bottom:10px;">Resolution &amp; aperture</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:1.05rem;color:{{ accent }};margin-bottom:12px;">D = N × p</div>
+            <p style="font-size:0.98rem;line-height:1.65;color:#5C4E42;margin:0;">Lateral resolution depends on wavelength <em>and</em> aperture size. Pitch controls aliasing; aperture size (elements × pitch) controls beamwidth — and thus resolution.</p>
+          </div>
+        </div>
+
+        <!-- Observed behavior callout -->
+        <div style="border-left:3px solid {{ accent }};padding:6px 0 6px clamp(20px,2.5vw,28px);margin-bottom:clamp(30px,3.5vw,44px);">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:12px;">The counterintuitive finding</div>
+          <p style="font-size:1.05rem;line-height:1.7;color:#2B211A;margin:0;">Reducing the pitch to satisfy the Nyquist criterion did <strong style="font-weight:600;">not</strong> improve image quality — point targets merged and images grew blurrier. For a fixed number of elements, a smaller pitch means a smaller physical aperture, and a smaller aperture widens the beam.</p>
+        </div>
+
+        <!-- Three cases -->
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:16px;">Simulation Design — Three Cases</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:clamp(18px,2.5vw,28px);margin-bottom:clamp(30px,3.5vw,44px);">
+          <div style="padding:2px 0;display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.8rem,2.6vw,2.2rem);color:#D8CCBD;line-height:1;">01</div>
+            <div style="font-family:'Spectral',serif;font-size:1.12rem;font-weight:500;">Fixed pitch, varying frequency</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.03em;color:#948473;">pitch 0.30 mm · fc 3 / 7 / 11 MHz</div>
+            <div style="font-size:0.95rem;line-height:1.6;color:#5C4E42;margin-top:2px;">Large aperture preserved → <strong style="color:#1F6B4A;font-weight:600;">resolution improves</strong>.</div>
+          </div>
+          <div style="padding:2px 0;display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.8rem,2.6vw,2.2rem);color:#D8CCBD;line-height:1;">02</div>
+            <div style="font-family:'Spectral',serif;font-size:1.12rem;font-weight:500;">Scaled pitch with frequency</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.03em;color:#948473;">pitch → 0.07 mm at 11 MHz</div>
+            <div style="font-size:0.95rem;line-height:1.6;color:#5C4E42;margin-top:2px;">Aperture shrinks → <strong style="color:#A23B2E;font-weight:600;">beam broadening &amp; point merging</strong>.</div>
+          </div>
+          <div style="padding:2px 0;display:flex;flex-direction:column;gap:12px;">
+            <div style="font-family:'Spectral',serif;font-size:clamp(1.8rem,2.6vw,2.2rem);color:#D8CCBD;line-height:1;">03</div>
+            <div style="font-family:'Spectral',serif;font-size:1.12rem;font-weight:500;">Scaled array size</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.03em;color:#948473;">16×16 (256 el.) · pitch 0.30 mm</div>
+            <div style="font-size:0.95rem;line-height:1.6;color:#5C4E42;margin-top:2px;">Aperture increases → <strong style="color:#1F6B4A;font-weight:600;">narrower beam, better resolution</strong>.</div>
+          </div>
+        </div>
+
+        <!-- Case result figure slots -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,2.5vw,32px);align-items:start;">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:12px;">Case 1 — Fixed pitch, varying frequency</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:12px;">
+                <img src="uploads/us3-case1a.png" alt="Case 1 reconstruction at 3 MHz and 7 MHz, fixed 0.30 mm pitch — XY/XZ/YZ planes" style="width:100%;height:auto;display:block;">
+              </div>
+              <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:12px;">
+                <img src="uploads/us3-case1b.png" alt="Case 1 reconstruction at 11 MHz, fixed 0.30 mm pitch — XY/XZ/YZ planes" style="width:100%;height:auto;display:block;">
+              </div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.05em;color:#948473;margin-top:10px;">Fixed pitch 0.30 mm · 3 / 7 / 11 MHz — large aperture preserved, resolution improves with frequency</div>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:12px;">Case 2 — Scaled pitch with frequency</div>
+            <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:12px;">
+              <img src="uploads/us3-case2.png" alt="Case 2 reconstruction at 11 MHz with pitch scaled to 0.07 mm — XY/XZ/YZ planes showing beam broadening and point merging" style="width:100%;height:auto;display:block;">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.05em;color:#948473;margin-top:10px;">Pitch scaled to 0.07 mm @ 11 MHz — aperture shrinks, beam broadens and point targets merge</div>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:12px;">Case 3 — Scaled array (16×16)</div>
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:12px;">
+                <img src="uploads/us3-case3b.png" alt="Case 3: 16x16 array with fixed 0.30 mm pitch at 11 MHz and 7 MHz — XY/XZ/YZ planes" style="width:100%;height:auto;display:block;">
+              </div>
+              <div style="background:#fff;border:1px solid #DED2C2;border-radius:3px;overflow:hidden;padding:12px;">
+                <img src="uploads/us3-case3a.png" alt="Case 3: 16x16 array with scaled pitch 0.07 mm and 0.11 mm at 11 MHz — XY/XZ/YZ planes" style="width:100%;height:auto;display:block;">
+              </div>
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.05em;color:#948473;margin-top:10px;">16×16 · fixed 0.30 mm (top) &amp; scaled 0.07 / 0.11 mm (bottom) — larger aperture, sharper targets</div>
+          </div>
+        </div>
+
+        <p style="font-family: 'Spectral',serif; font-style: italic; font-size: clamp(1.15rem,1.8vw,1.5rem); line-height: 1.4; color: #2B211A; margin: clamp(36px,4vw,52px) 0 0; max-width: 400ch">The takeaway: Reducing element pitch on a fixed 64-element array does not improve quality as expected. Since aperture size is governed by D=Nxp, smaller pitch reduces total aperture, increase bandwidth, and ultimately&nbsp; degrades lateral resolution, causing point target to merged and blurry. This finding showed that maintaining sufficient aperture size is more critical than satisfying Nyquist alone.&nbsp;</p>
+      </div>
+
+      <article style="padding:clamp(32px,4vw,52px) 0;border-top:1px solid #DED2C2;">
+        <div style="display:flex;align-items:baseline;gap:clamp(16px,3vw,28px);margin-bottom:clamp(24px,3vw,36px);">
+          <div style="font-family:'Spectral',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:400;color:#D8CCBD;line-height:1;flex:0 0 auto;">03</div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:{{ accent }};margin-bottom:10px;">MACHINE LEARNING</div>
+            <h3 style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(1.5rem,2.8vw,2.3rem);line-height:1.14;letter-spacing:-0.01em;margin:0;max-width:24ch;">Cancer Detection via SERS Raman Spectroscopy</h3>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,56px);align-items:center;">
+          <div style="position:relative;aspect-ratio:4/3;width:100%;border:1px solid #D8CCBD;border-radius:3px;overflow:hidden;background:#FAF6F0;">
+            <img src="uploads/model_comparison.png" alt="Model comparison — test set accuracy: Random Forest, SVM (RBF), CNN under random split vs. group-aware split" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;padding:10px;">
+            <div style="position:absolute;top:12px;left:12px;width:18px;height:18px;border-top:1.5px solid {{ accent }};border-left:1.5px solid {{ accent }};"></div>
+            <div style="position:absolute;bottom:12px;right:12px;width:18px;height:18px;border-bottom:1.5px solid {{ accent }};border-right:1.5px solid {{ accent }};"></div>
+          </div>
+          <div>
+            <p style="font-size:1.02rem;line-height:1.65;color:#5C4E42;margin:0 0 18px;max-width:46ch;">A machine-learning pipeline comparing Random Forest, SVM, and CNN for classifying cancer vs. normal cells from surface-enhanced Raman spectroscopy (SERS) data. I built a preprocessing pipeline with RamanSPy — baseline correction, denoising, normalization — then trained and evaluated three models, inspired by Zhang et al.'s 2024 breast-cancer Raman study. A group-aware evaluation exposed data leakage that had inflated CNN accuracy by nearly 20 points, revealing SVM as the more reliable model once evaluation was corrected.</p>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.05em;color:#948473;margin-bottom:16px;">Python · scikit-learn · PyTorch · RamanSPy · Data Leakage Analysis</div>
+            <a href="https://github.com/deolianatilman-rgb/Machine-Learning_Cancer_Detection" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:{{ accent }};text-decoration:none;border-bottom:1px solid #C9BAA7;padding-bottom:2px;" style-hover="border-color:{{ accent }};">View on GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <div style="border-left:2px solid {{ accent }};padding:2px 0 clamp(40px,5vw,60px) clamp(20px,3vw,36px);">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};margin-bottom:26px;">03 · In Depth</div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,60px);">
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">Goal</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">Classify cancer vs. normal cells from SERS Raman spectra using classical ML and deep learning — and rigorously validate that reported performance reflects genuine generalization rather than data leakage.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">Data &amp; Preprocessing</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">1,240 SERS spectra across melanoma cell lines and normal fibroblasts/melanocytes — gold-nanourchin substrates, 3 surface functionalizations. Preprocessed with RamanSPy: ASLS baseline correction, light Savitzky–Golay smoothing, min–max normalization.</p>
+          </div>
+          <div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:#948473;margin-bottom:12px;">Key Finding</div>
+            <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">A naive random train/test split showed <strong style="color:#2B211A;font-weight:600;">95.6% CNN accuracy</strong>, but grouping by source sample to prevent leakage dropped it to <strong style="color:#A23B2E;font-weight:600;">76.2%</strong> — while SVM held steady at <strong style="color:#1F6B4A;font-weight:600;">92.4%</strong>, proving the more trustworthy model for this dataset size.</p>
+          </div>
+        </div>
+      </div>
+    </div></section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" style="position:relative;z-index:1;scroll-margin-top:88px;border-top:1px solid #DED2C2;">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(20px,5vw,52px);text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#6B5D50;margin-bottom:26px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:{{ accent }};animation:recPulse 2.4s ease-in-out infinite;"></span>
+        Open to internships &amp; new-grad roles · Seoul
+      </div>
+      <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:clamp(2.2rem,5vw,4rem);line-height:1.06;letter-spacing:-0.02em;margin:0 auto 32px;max-width:16ch;">Let's build something that matters.</h2>
+      <a href="mailto:deolianatilman@gmail.com" style="font-family:'Spectral',serif;font-size:clamp(1.3rem,2.4vw,1.9rem);color:{{ accent }};text-decoration:none;border-bottom:1px solid #C9BAA7;padding-bottom:3px;" style-hover="border-color:{{ accent }};">deolianatilman@gmail.com</a>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(16px,3vw,36px);margin-top:44px;font-family:'IBM Plex Mono',monospace;font-size:0.74rem;letter-spacing:0.08em;text-transform:uppercase;">
+        <a href="https://linkedin.com/in/deoliana-tilman-magalhaes-2b6243250" target="_blank" rel="noopener" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">LinkedIn ↗</a>
+        <a href="https://deolianatilman-rgb.github.io" target="_blank" rel="noopener" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">GitHub ↗</a>
+        <a href="mailto:deolianatilman@gmail.com" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">Email ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer style="position:relative;z-index:1;border-top:1px solid #DED2C2;">
+    <div style="max-width:1320px;margin:0 auto;padding:26px clamp(20px,5vw,52px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;color:#948473;">
+      <span>© 2026 Deoliana Matilde Tilman Magalhães</span>
+      <span>Biomedical Engineer · Portfolio</span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#4A382B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#9C5A3C&quot;,&quot;#B4552F&quot;,&quot;#7A6A3C&quot;,&quot;#4A382B&quot;],&quot;section&quot;:&quot;Style&quot;},&quot;imagingOverlays&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Style&quot;},&quot;gridBackdrop&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Style&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#9C5A3C';
+    return {
+      accent,
+      showOverlays: this.props.imagingOverlays ?? true,
+      gridBackdrop: this.props.gridBackdrop ?? true,
+      projects: [
+        {
+          num: '01',
+          kind: 'Big-Data Project · Deep Learning',
+          title: 'Adaptive Beamforming with Deep Learning for Ultrasound Image Reconstruction',
+          desc: 'DAS beamforming is fast but low-resolution; MVDR is sharp but too costly for real time. I built a lightweight MLP that learns a pixel-wise correction mapping DAS toward MVDR quality — using interpretable RF features (log intensity, coherence factor, local statistics, depth). Trained on PICMUS phantom and in-vivo carotid data, it delivers near-MVDR resolution and sidelobe suppression at a fraction of the compute.',
+          tags: 'Python · Deep Learning · MLP · PICMUS · MVDR / DAS',
+          imgSrc: 'uploads/us-collage.png',
+          img: '',
+          showPlaceholder: false,
+          year: '2025'
+        },
+        {
+          num: '02',
+          kind: 'Capstone Project',
+          title: '2D Ultrasound Transducer Simulation',
+          desc: 'Simulated 2D ultrasound transducers in Verasonics / MATLAB, systematically varying array dimensions and the pitch of a 64-element (8×8) array to study image characterization and beamforming performance.',
+          tags: 'MATLAB · Verasonics · Transducer Simulation',
+          imgSrc: '',
+          img: 'TRANSDUCER ARRAY SIM — DROP IMAGE',
+          showPlaceholder: true,
+          year: '2025–26'
+        }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
