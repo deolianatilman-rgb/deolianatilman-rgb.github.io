@@ -32,8 +32,15 @@
   ::selection{background:#E4D6C4;}
   @keyframes recPulse{0%,100%{opacity:1;}50%{opacity:0.25;}}
   .pf-work{position:relative;}
-  .pf-work__menu{position:absolute;top:100%;right:-16px;padding-top:14px;display:none;z-index:60;}
-  .pf-work:hover .pf-work__menu,.pf-work:focus-within .pf-work__menu{display:block;}
+  .pf-work__btn{all:unset;cursor:pointer;color:#6B5D50;display:inline-flex;align-items:center;gap:6px;font:inherit;letter-spacing:inherit;text-transform:inherit;}
+  .pf-work__btn:hover,.pf-work__btn[aria-expanded="true"]{color:#2B211A;}
+  .pf-work__btn:focus-visible{outline:2px solid var(--pf-accent);outline-offset:3px;}
+  .pf-caret{transition:transform .2s ease;}
+  .pf-work__btn[aria-expanded="true"] .pf-caret{transform:rotate(180deg);}
+  .pf-work__menu{position:absolute;top:100%;right:-16px;padding-top:14px;z-index:60;animation:pfMenuIn .18s ease-out both;}
+  @keyframes pfMenuIn{from{opacity:0;transform:translateY(-6px);}to{opacity:1;transform:none;}}
+  .pf-work__all{display:block;padding:10px 12px;border-bottom:1px solid #E6DCCD;margin-bottom:4px;color:var(--pf-accent);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;}
+  .pf-work__all:hover{background:#F0E7DB;}
   .pf-work__panel{width:340px;background:#FAF6F0;border:1px solid #DED2C2;border-radius:3px;box-shadow:0 18px 40px rgba(43,33,26,.14);padding:8px;display:flex;flex-direction:column;gap:2px;text-transform:none;letter-spacing:0;}
   .pf-work__item{display:flex;align-items:baseline;gap:12px;padding:10px 12px;border-radius:2px;color:#2B211A;text-decoration:none;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:0.9rem;line-height:1.35;}
   .pf-work__item:hover,.pf-work__item:focus-visible{background:#F0E7DB;}
@@ -49,7 +56,7 @@
   .pf-index__demo{align-self:flex-start;margin-top:6px;padding:8px 12px;border-radius:2px;background:var(--pf-accent);color:#FAF6F0;text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;}
   .pf-index__demo:hover{opacity:.9;}
   a:focus-visible{outline:2px solid var(--pf-accent);outline-offset:3px;}
-  @media (max-width:640px){.pf-work__menu{display:none !important;}}
+  @media (max-width:640px){.pf-work{position:static;}.pf-work__menu{left:16px;right:16px;padding-top:8px;}.pf-work__panel{width:auto;}}
 </style>
 </helmet>
 
@@ -67,9 +74,11 @@
         <a href="#about" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">About</a>
         <a href="#resume" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">Résumé</a>
         <div class="pf-work">
-          <a href="#work" aria-haspopup="true" style="color:#6B5D50;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="color:#2B211A;">Work<svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4"></path></svg></a>
-          <div class="pf-work__menu">
+          <button type="button" class="pf-work__btn" onClick="{{ toggleWork }}" aria-expanded="{{ workExpanded }}" aria-controls="pf-work-menu">Work<svg class="pf-caret" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4"></path></svg></button>
+          <sc-if value="{{ workOpen }}" hint-placeholder-val="{{ false }}">
+          <div class="pf-work__menu" id="pf-work-menu">
             <div class="pf-work__panel">
+              <a class="pf-work__all" href="#work">All projects →</a>
               <a class="pf-work__item" href="#project-01"><span class="pf-num">01</span><span>Adaptive Beamforming with Deep Learning</span></a>
               <a class="pf-work__item" href="#project-02"><span class="pf-num">02</span><span>2D (8×8) Ultrasound Transducer Simulation</span></a>
               <a class="pf-work__item" href="#project-03"><span class="pf-num">03</span><span>Cancer Detection via SERS Raman Spectroscopy</span></a>
@@ -77,6 +86,7 @@
               <a class="pf-work__demo" href="savesignal/" target="_blank" rel="noopener">Try the SaveSignal demo ↗</a>
             </div>
           </div>
+          </sc-if>
         </div>
         <a href="#contact" style="color:#FAF6F0;text-decoration:none;background:{{ accent }};padding:8px 15px;border-radius:2px;">Contact</a>
       </div>
@@ -739,14 +749,26 @@ class Component extends DCLogic {
       if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
     };
     this.hashTimers = [setTimeout(jump, 60), setTimeout(jump, 700)];
+    // Close the Work menu on any click outside its button (picking a project closes it too).
+    this.closeWork = (e) => {
+      if (this.state && this.state.workOpen && !(e.target.closest && e.target.closest('.pf-work__btn'))) {
+        this.setState({ workOpen: false });
+      }
+    };
+    document.addEventListener('click', this.closeWork);
   }
   componentWillUnmount() {
     (this.hashTimers || []).forEach(clearTimeout);
+    document.removeEventListener('click', this.closeWork);
   }
   renderVals() {
     const accent = this.props.accent ?? '#9C5A3C';
+    const workOpen = !!(this.state && this.state.workOpen);
     return {
       accent,
+      workOpen,
+      workExpanded: workOpen ? 'true' : 'false',
+      toggleWork: () => this.setState({ workOpen: !workOpen }),
       showOverlays: this.props.imagingOverlays ?? true,
       gridBackdrop: this.props.gridBackdrop ?? true,
       projects: [
