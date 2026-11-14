@@ -31,10 +31,29 @@
   body{margin:0;background:#FAF6F0;color:#2B211A;font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
   ::selection{background:#E4D6C4;}
   @keyframes recPulse{0%,100%{opacity:1;}50%{opacity:0.25;}}
+  .pf-work{position:relative;}
+  .pf-work__menu{position:absolute;top:100%;right:-16px;padding-top:14px;display:none;z-index:60;}
+  .pf-work:hover .pf-work__menu,.pf-work:focus-within .pf-work__menu{display:block;}
+  .pf-work__panel{width:340px;background:#FAF6F0;border:1px solid #DED2C2;border-radius:3px;box-shadow:0 18px 40px rgba(43,33,26,.14);padding:8px;display:flex;flex-direction:column;gap:2px;text-transform:none;letter-spacing:0;}
+  .pf-work__item{display:flex;align-items:baseline;gap:12px;padding:10px 12px;border-radius:2px;color:#2B211A;text-decoration:none;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:0.9rem;line-height:1.35;}
+  .pf-work__item:hover,.pf-work__item:focus-visible{background:#F0E7DB;}
+  .pf-num{font-family:'Spectral',serif;font-size:1rem;color:#A8977F;flex:0 0 auto;}
+  .pf-work__demo{margin-top:6px;padding:11px 12px;border-radius:2px;background:var(--pf-accent);color:#FAF6F0;text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;text-align:center;}
+  .pf-work__demo:hover{opacity:.9;}
+  .pf-index{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:0 0 clamp(40px,5vw,64px);}
+  .pf-index__card{display:flex;flex-direction:column;gap:8px;padding:18px 18px 16px;background:#FAF6F0;border:1px solid #DED2C2;border-radius:3px;}
+  .pf-index__link{display:flex;flex-direction:column;gap:8px;color:#2B211A;text-decoration:none;flex-grow:1;}
+  .pf-index__link:hover .pf-index__title{text-decoration:underline;text-underline-offset:3px;text-decoration-color:#C9BAA7;}
+  .pf-index__kind{font-family:'IBM Plex Mono',monospace;font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--pf-accent);}
+  .pf-index__title{font-family:'Spectral',serif;font-size:1.12rem;line-height:1.25;}
+  .pf-index__demo{align-self:flex-start;margin-top:6px;padding:8px 12px;border-radius:2px;background:var(--pf-accent);color:#FAF6F0;text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;}
+  .pf-index__demo:hover{opacity:.9;}
+  a:focus-visible{outline:2px solid var(--pf-accent);outline-offset:3px;}
+  @media (max-width:640px){.pf-work__menu{display:none !important;}}
 </style>
 </helmet>
 
-<div style="position:relative;min-height:100vh;background:#FAF6F0;overflow:hidden;">
+<div style="position:relative;min-height:100vh;background:#FAF6F0;overflow-x:clip;--pf-accent:{{ accent }};">
 
   <sc-if value="{{ gridBackdrop }}" hint-placeholder-val="{{ true }}">
     <div aria-hidden="true" style="position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(#2B211A 1px,transparent 1px),linear-gradient(90deg,#2B211A 1px,transparent 1px);background-size:64px 64px;opacity:0.03;"></div>
@@ -47,7 +66,18 @@
       <div style="display:flex;flex-wrap:wrap;gap:clamp(14px,2.4vw,30px);align-items:center;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.09em;text-transform:uppercase;">
         <a href="#about" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">About</a>
         <a href="#resume" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">Résumé</a>
-        <a href="#work" style="color:#6B5D50;text-decoration:none;" style-hover="color:#2B211A;">Work</a>
+        <div class="pf-work">
+          <a href="#work" aria-haspopup="true" style="color:#6B5D50;text-decoration:none;display:inline-flex;align-items:center;gap:6px;" style-hover="color:#2B211A;">Work<svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.4"></path></svg></a>
+          <div class="pf-work__menu">
+            <div class="pf-work__panel">
+              <a class="pf-work__item" href="#project-01"><span class="pf-num">01</span><span>Adaptive Beamforming with Deep Learning</span></a>
+              <a class="pf-work__item" href="#project-02"><span class="pf-num">02</span><span>2D (8×8) Ultrasound Transducer Simulation</span></a>
+              <a class="pf-work__item" href="#project-03"><span class="pf-num">03</span><span>Cancer Detection via SERS Raman Spectroscopy</span></a>
+              <a class="pf-work__item" href="#project-04"><span class="pf-num">04</span><span>SaveSignal: AI Early Warning and Mesh Rescue</span></a>
+              <a class="pf-work__demo" href="savesignal/" target="_blank" rel="noopener">Try the SaveSignal demo ↗</a>
+            </div>
+          </div>
+        </div>
         <a href="#contact" style="color:#FAF6F0;text-decoration:none;background:{{ accent }};padding:8px 15px;border-radius:2px;">Contact</a>
       </div>
     </nav>
@@ -232,12 +262,27 @@
         <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:{{ accent }};">03 — Selected Work</div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;color:#948473;">04 PROJECTS</div>
       </div>
+      <nav class="pf-index" aria-label="Projects">
+        <div class="pf-index__card">
+          <a class="pf-index__link" href="#project-01"><span class="pf-num">01</span><span class="pf-index__kind">Deep Learning · Ultrasound</span><span class="pf-index__title">Adaptive Beamforming with Deep Learning</span></a>
+        </div>
+        <div class="pf-index__card">
+          <a class="pf-index__link" href="#project-02"><span class="pf-num">02</span><span class="pf-index__kind">Capstone · Simulation</span><span class="pf-index__title">2D (8×8) Ultrasound Transducer Simulation</span></a>
+        </div>
+        <div class="pf-index__card">
+          <a class="pf-index__link" href="#project-03"><span class="pf-num">03</span><span class="pf-index__kind">Machine Learning</span><span class="pf-index__title">Cancer Detection via SERS Raman Spectroscopy</span></a>
+        </div>
+        <div class="pf-index__card">
+          <a class="pf-index__link" href="#project-04"><span class="pf-num">04</span><span class="pf-index__kind">Team Project · Live Demo</span><span class="pf-index__title">SaveSignal: AI Early Warning and Mesh Rescue</span></a>
+          <a class="pf-index__demo" href="savesignal/" target="_blank" rel="noopener">Try the live demo ↗</a>
+        </div>
+      </nav>
 
       <!-- PROJECT 01 -->
       
 
       <!-- PROJECT 01 — IN DEPTH -->
-      <article style="padding:clamp(32px,4vw,52px) 0 clamp(26px,3vw,38px);border-top:1px solid #DED2C2;">
+      <article id="project-01" style="scroll-margin-top:88px;padding:clamp(32px,4vw,52px) 0 clamp(26px,3vw,38px);border-top:1px solid #DED2C2;">
         <!-- header on top -->
         <div style="display:flex;align-items:baseline;gap:clamp(16px,3vw,28px);margin-bottom:clamp(24px,3vw,36px);">
           <div style="font-family:'Spectral',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:400;color:#D8CCBD;line-height:1;flex:0 0 auto;">01</div>
@@ -390,7 +435,7 @@
             <p style="font-size:1rem;line-height:1.7;color:#5C4E42;margin:0;">Move from pixel-wise features to RF-domain learning — UNet or beamformer-transformer architectures and covariance-aware networks — and train across more diverse, multi-center data. Deploy on GPU or embedded hardware (TensorRT) for real-time, point-of-care adaptive beamforming.</p>
           </div>
         </div>
-      </div><article style="padding:clamp(32px,4vw,52px) 0;border-top:1px solid #DED2C2;">
+      </div><article id="project-02" style="scroll-margin-top:88px;padding:clamp(32px,4vw,52px) 0;border-top:1px solid #DED2C2;">
         <div style="display:flex;align-items:baseline;gap:clamp(16px,3vw,28px);margin-bottom:clamp(24px,3vw,36px);">
           <div style="font-family:'Spectral',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:400;color:#D8CCBD;line-height:1;flex:0 0 auto;">02</div>
           <div>
@@ -593,7 +638,7 @@
         <p style="font-family: 'Spectral',serif; font-style: italic; font-size: clamp(1.15rem,1.8vw,1.5rem); line-height: 1.4; color: #2B211A; margin: clamp(36px,4vw,52px) 0 0; max-width: 400ch">The takeaway: Reducing element pitch on a fixed 64-element array does not improve quality as expected. Since aperture size is governed by D=Nxp, smaller pitch reduces total aperture, increase bandwidth, and ultimately&nbsp; degrades lateral resolution, causing point target to merged and blurry. This finding showed that maintaining sufficient aperture size is more critical than satisfying Nyquist alone.&nbsp;</p>
       </div>
 
-      <article style="padding:clamp(32px,4vw,52px) 0;border-top:1px solid #DED2C2;">
+      <article id="project-03" style="scroll-margin-top:88px;padding:clamp(32px,4vw,52px) 0;border-top:1px solid #DED2C2;">
         <div style="display:flex;align-items:baseline;gap:clamp(16px,3vw,28px);margin-bottom:clamp(24px,3vw,36px);">
           <div style="font-family:'Spectral',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:400;color:#D8CCBD;line-height:1;flex:0 0 auto;">03</div>
           <div>
@@ -634,7 +679,7 @@
         </div>
       </div>
       <!-- PROJECT 04 — SAVESIGNAL -->
-      <article style="padding:clamp(32px,4vw,52px) 0;border-top:1px solid #DED2C2;">
+      <article id="project-04" style="scroll-margin-top:88px;padding:clamp(32px,4vw,52px) 0;border-top:1px solid #DED2C2;">
         <div style="display:flex;align-items:baseline;gap:clamp(16px,3vw,28px);margin-bottom:clamp(24px,3vw,36px);">
           <div style="font-family:'Spectral',serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:400;color:#D8CCBD;line-height:1;flex:0 0 auto;">04</div>
           <div>
@@ -686,6 +731,18 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#4A382B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#9C5A3C&quot;,&quot;#B4552F&quot;,&quot;#7A6A3C&quot;,&quot;#4A382B&quot;],&quot;section&quot;:&quot;Style&quot;},&quot;imagingOverlays&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Style&quot;},&quot;gridBackdrop&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Style&quot;}}">
 class Component extends DCLogic {
+  componentDidMount() {
+    // The page renders after load, so the browser can miss a #hash in the URL. Jump to it once content exists.
+    const jump = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      const el = id && document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+    };
+    this.hashTimers = [setTimeout(jump, 60), setTimeout(jump, 700)];
+  }
+  componentWillUnmount() {
+    (this.hashTimers || []).forEach(clearTimeout);
+  }
   renderVals() {
     const accent = this.props.accent ?? '#9C5A3C';
     return {
